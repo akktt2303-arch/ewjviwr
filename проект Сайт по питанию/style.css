@@ -1,0 +1,236 @@
+:root {
+  --bg-color: #f9f9f9;
+  --sidebar-bg: #ffffff;
+  --card-bg: #ffffff;
+  --text-main: #111111;
+  --text-muted: #777777;
+  --accent-color: #4edcd6; /* Бирюзовый цвет из стиля Arne */
+  --border-color: #eeeeee;
+  --prohibited-bg: #fff5f5;
+  --prohibited-text: #c53030;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Фиксированное левое меню */
+.sidebar {
+  width: 260px;
+  background: var(--sidebar-bg);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid var(--border-color);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 60px;
+  color: var(--text-main);
+}
+
+.search-box {
+  margin-bottom: 40px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 13px;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+  border-bottom-color: var(--accent-color);
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 5px 0;
+  transition: color 0.2s;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--accent-color);
+}
+
+/* Правая контентная область */
+.main-content {
+  margin-left: 260px;
+  flex: 1;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.header-info {
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.header-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Плиточная сетка */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.grid-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.rules-card { background: #edfdfb; border-color: #c7f3f0; }
+.rules-card h2 { color: #087f7a; }
+
+.prohibited-card { background: var(--prohibited-bg); border-color: #fed7d7; }
+.prohibited-card h2 { color: var(--prohibited-text); }
+.prohibited-card ul { padding-left: 20px; margin: 0; }
+.prohibited-card li { margin-bottom: 5px; font-size: 13px; color: #742a2a; }
+
+.grid-item h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.meal-row {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed var(--border-color);
+}
+.meal-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.meal-name {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  margin-bottom: 4px;
+}
+
+.meal-dish { font-size: 13px; line-height: 1.5; color: var(--text-main); }
+.meal-weight { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* Минималистичные кнопки «Найти рецепт» в стиле Arne */
+.recipe-btn {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: #777777;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 0;
+  margin-top: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+  text-decoration: none; /* Удаляет синюю линию ссылки */
+}
+
+.recipe-btn:hover {
+  color: #4edcd6;
+  border-bottom: 1px solid #4edcd6;
+}
+
+
+
+
+/* Иконки соцсетей внизу сайдбара */
+.social-icons {
+  margin-top: auto;
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+.social-link {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.social-link:hover {
+  color: var(--accent-color);
+}
+
+/* Адаптивность под мобильные телефоны */
+@media (max-width: 900px) {
+  body { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+  }
+  .logo { margin-bottom: 20px; text-align: center; }
+  .search-box { margin-bottom: 20px; }
+  .nav-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+  .nav-menu::-webkit-scrollbar { display: none; }
+  .social-icons { display: none; }
+  .main-content { margin-left: 0; padding: 20px; }
+  .masonry-grid { grid-template-columns: 1fr; gap: 20px; }
+}

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Диета №6 — Дизайнерское меню</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Фиксированное левое меню в стиле веб-галереи Arne -->
+  <div class="sidebar">
+    <div class="logo">Arne.Diet</div>
+    
+    <!-- Поле живого поиска по блюдам внутри сайта -->
+    <div class="search-box">
+      <input type="text" id="menuSearch" placeholder="Поиск блюда или дня..." oninput="liveSearch()">
+    </div>
+    
+    <!-- Кнопки навигации по дням недели -->
+    <div class="nav-menu" id="tabsNav">
+      <button class="nav-item active" onclick="filterDay('ALL')">Все дни</button>
+      <button class="nav-item" onclick="filterDay('ПН')">Понедельник</button>
+      <button class="nav-item" onclick="filterDay('ВТ')">Вторник</button>
+      <button class="nav-item" onclick="filterDay('СР')">Среда</button>
+      <button class="nav-item" onclick="filterDay('ЧТ')">Четверг</button>
+      <button class="nav-item" onclick="filterDay('ПТ')">Пятница</button>
+      <button class="nav-item" onclick="filterDay('СБ')">Суббота</button>
+      <button class="nav-item" onclick="filterDay('ВС')">Воскресенье</button>
+    </div>
+  </div>
+
+  <!-- Основная содержательная область справа -->
+  <div class="main-content">
+    <div class="header-info">
+      <p><strong>Диета №6 по Певзнеру.</strong> Разработано для мужчины 46 лет, 94 кг &rarr; цель 90 кг. Исключён кефир. Каши: рис/овсянка – на молоке, гречка – на воде. Разрешён греческий йогурт.</p>
+    </div>
+
+    <!-- Асимметричная плиточная сетка -->
+    <div class="masonry-grid">
+      
+      <!-- Карточка: Правила -->
+      <div class="grid-item rules-card" data-info="true">
+        <h2>Рекомендации</h2>
+        <p style="font-size: 13px; margin: 0; line-height: 1.6;">Соль до 5 г/сут., чистая жидкость &ge; 2–2,5 л. Мясо и рыбу отваривать, первичный бульон сливать. Птица без кожи. Ужин за 3 часа до сна.</p>
+      </div>
+
+      <!-- Карточка: Исключения -->
+      <div class="grid-item prohibited-card" data-info="true">
+        <h2>Исключить</h2>
+        <ul>
+          <li>Бульоны, колбасы, консервы</li>
+          <li>Бобовые, щавель, шпинат</li>
+          <li>Шоколад, какао, крепкий кофе, алкоголь</li>
+          <li>Кефир, ряженка</li>
+        </ul>
+      </div>
+
+      <!-- ПОНЕДЕЛЬНИК -->
+      <div class="grid-item day-block" data-day="ПН">
+        <h2>Понедельник</h2>
+        <div class="meal-row">
+          <div class="meal-name">Завтрак</div>
+          <div class="meal-dish">Каша овсяная на молоке, Яйцо варёное, Хлеб пшеничный вчерашний, Масло сливочное, Чай с молоком</div>
+          <div class="meal-weight">200г / 1шт / 30г / 5г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">2-й завтрак</div>
+          <div class="meal-dish">Греческий йогурт натуральный 2%, Яблоко свежее</div>
+          <div class="meal-weight">150г / 100г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Обед</div>
+          <div class="meal-dish">Суп картофельный с вермишелью (вегетарианский), Кнели из трески паровые, Пюре картофельное (на воде), Салат из огурцов с укропом, Компот</div>
+          <div class="meal-weight">250мл / 100г / 150г / 150г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Полдник</div>
+          <div class="meal-dish">Запеканка творожная с яблоком (без сахара), Отвар шиповника</div>
+          <div class="meal-weight">150г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Ужин</div>
+          <div class="meal-dish">Голубцы ленивые с рисом и овощами (без мяса), Сметана 10%, Чай некрепкий</div>
+          <div class="meal-weight">200г / 20г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">На ночь</div>
+          <div class="meal-dish">Вода минеральная щелочная (без газа)</div>
+          <div class="meal-weight">200мл</div>
+        </div>
+      </div>
+
+      <!-- ВТОРНИК -->
+      <div class="grid-item day-block" data-day="ВТ">
+        <h2>Вторник</h2>
+        <div class="meal-row">
+          <div class="meal-name">Завтрак</div>
+          <div class="meal-dish">Каша рисовая жидкая на молоке, Омлет из 2 белков паровой, Сыр неострый, Хлеб белый, Чай с молоком</div>
+          <div class="meal-weight">200г / 100г / 20г / 30г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">2-й завтрак</div>
+          <div class="meal-dish">Творог нежирный (0–2%), Курага размоченная</div>
+          <div class="meal-weight">100г / 30г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Обед</div>
+          <div class="meal-dish">Суп овсяный с овощами, Филе индейки отварное, Гречка (на воде), Салат из помидоров и перца, Кисель яблочный</div>
+          <div class="meal-weight">250мл / 100г / 150г / 150г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Полдник</div>
+          <div class="meal-dish">Греческий йогурт с укропом (соус) + свежий огурец</div>
+          <div class="meal-weight">150г + 50г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Ужин</div>
+          <div class="meal-dish">Рагу овощное тушёное, Хлеб белый, Чай травяной (ромашка, мята)</div>
+          <div class="meal-weight">250г / 20г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">На ночь</div>
+          <div class="meal-dish">Вода минеральная щелочная (без газа)</div>
+          <div class="meal-weight">200мл</div>
+        </div>
+      </div>
+
+      <!-- СРЕДА -->
+      <div class="grid-item day-block" data-day="СР">
+        <h2>Среда</h2>
+        <div class="meal-row">
+          <div class="meal-name">Завтрак</div>
+          <div class="meal-dish">Каша гречневая (на воде), Яйцо пашот, Хлеб с отрубями, Масло сливочное, Чай с молоком</div>
+          <div class="meal-weight">200г / 60г / 30г / 5г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">2-й завтрак</div>
+          <div class="meal-dish">Пудинг манный с изюмом (паровой), Яблоко печёное</div>
+          <div class="meal-weight">150г / 100г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Обед</div>
+          <div class="meal-dish">Свекольник холодный вегетарианский, Котлеты из судака паровые, Макароны отварные, Салат из моркови с яблоком</div>
+          <div class="meal-weight">250мл / 100г / 150г / 130г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Полдник</div>
+          <div class="meal-dish">Сырники из творога запечённые, Сметана 10%, Отвар шиповника</div>
+          <div class="meal-weight">120г / 20г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Ужин</div>
+          <div class="meal-dish">Перец, фаршированный рисом и морковью, Хлеб белый, Чай некрепкий</div>
+          <div class="meal-weight">200г / 20г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">На ночь</div>
+          <div class="meal-dish">Вода минеральная щелочная (без газа)</div>
+          <div class="meal-weight">200мл</div>
+        </div>
+      </div>
+
+      <!-- ЧЕТВЕРГ -->
+      <div class="grid-item day-block" data-day="ЧТ">
+        <h2>Четверг</h2>
+        <div class="meal-row">
+          <div class="meal-name">Завтрак</div>
+          <div class="meal-dish">Каша овсяная на молоке, Творог нежирный с зеленью, Хлеб белый, Масло сливочное, Чай с молоком</div>
+          <div class="meal-weight">200г / 80г / 30г / 5г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">2-й завтрак</div>
+          <div class="meal-dish">Греческий йогурт с кусочками груши</div>
+          <div class="meal-weight">150г + 50г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Обед</div>
+          <div class="meal-dish">Суп рисовый с картофелем, Запеканка из говядины и овощей, Овощи-гриль без масла, Компот из чернослива</div>
+          <div class="meal-weight">250мл / 150г / 150г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Полдник</div>
+          <div class="meal-dish">Мусс яблочный взбитый (из печёных яблок)</div>
+          <div class="meal-weight">150г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Ужин</div>
+          <div class="meal-dish">Картофельные зразы с творогом, Салат из свёклы отварной, Чай некрепкий</div>
+          <div class="meal-weight">200г / 100г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">На ночь</div>
+          <div class="meal-dish">Вода минеральная щелочная (без газа)</div>
+          <div class="meal-weight">200мл</div>
+        </div>
+      </div>
+
+      <!-- ПЯТНИЦА -->
+      <div class="grid-item day-block" data-day="ПТ">
+        <h2>Пятница</h2>
+        <div class="meal-row">
+          <div class="meal-name">Завтрак</div>
+          <div class="meal-dish">Каша рисовая на молоке, Омлет белковый с сыром паровой, Хлеб белый, Масло сливочное, Чай с молоком</div>
+          <div class="meal-weight">200г / 120г / 30г / 5г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">2-й завтрак</div>
+          <div class="meal-dish">Салат фруктовый (яблоко, банан, груша) с йогуртом</div>
+          <div class="meal-weight">200г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Обед</div>
+          <div class="meal-dish">Суп-пюре из тыквы с гренками, Тефтели куриные паровые, Картофель отварной с укропом, Морс клюквенный</div>
+          <div class="meal-weight">250мл / 100г / 150г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Полдник</div>
+          <div class="meal-dish">Творог нежирный с петрушкой, Хлебцы пшеничные</div>
+          <div class="meal-weight">100г / 20г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Ужин</div>
+          <div class="meal-dish">Овощной плов с курагой (без мяса), Салат из пекинской капусты, Чай травяной</div>
+          <div class="meal-weight">250г / 120г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">На ночь</div>
+          <div class="meal-dish">Вода минеральная щелочная (без газа)</div>
+          <div class="meal-weight">200мл</div>
+        </div>
+      </div>
+
+      <!-- СУББОТА -->
+      <div class="grid-item day-block" data-day="СБ">
+        <h2>Суббота</h2>
+        <div class="meal-row">
+          <div class="meal-name">Завтрак</div>
+          <div class="meal-dish">Каша гречневая с молоком, Яйцо варёное, Хлеб белый, Масло сливочное, Чай с молоком</div>
+          <div class="meal-weight">200г / 60г / 30г / 5г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">2-й завтрак</div>
+          <div class="meal-dish">Греческий йогурт с черникой или голубикой</div>
+          <div class="meal-weight">150г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Обед</div>
+          <div class="meal-dish">Суп молочный с лапшой, Горбуша отварная, Рис отварной со сливочным маслом, Салат из свёклы</div>
+          <div class="meal-weight">250мл / 100г / 150г / 130г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Полдник</div>
+          <div class="meal-dish">Сырники запечённые, Сметана 10%, Отвар шиповника</div>
+          <div class="meal-weight">120г / 20г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Ужин</div>
+          <div class="meal-dish">Картофель запечённый с сыром, Овощная нарезка (огурец, перец), Чай некрепкий</div>
+          <div class="meal-weight">200г / 150г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">На ночь</div>
+          <div class="meal-dish">Вода минеральная щелочная (без газа)</div>
+          <div class="meal-weight">200мл</div>
+        </div>
+      </div>
+
+      <!-- ВОСКРЕСЕНЬЕ -->
+      <div class="grid-item day-block" data-day="ВС">
+        <h2>Воскресенье</h2>
+        <div class="meal-row">
+          <div class="meal-name">Завтрак</div>
+          <div class="meal-dish">Каша овсяная на молоке, Белковый омлет с помидором, Хлеб белый, Сыр неострый, Чай с молоком</div>
+          <div class="meal-weight">200г / 150г / 30г / 15г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">2-й завтрак</div>
+          <div class="meal-dish">Банан небольшой, Творог нежирный</div>
+          <div class="meal-weight">100г / 50г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Обед</div>
+          <div class="meal-dish">Борщ вегетарианский, Котлета из телятины паровая, Вермишель отварная, Салат из капусты с морковью</div>
+          <div class="meal-weight">250мл / 100г / 150г / 150г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Полдник</div>
+          <div class="meal-dish">Яблоко запечённое с творогом</div>
+          <div class="meal-weight">150г</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">Ужин</div>
+          <div class="meal-dish">Лодочки из кабачков фаршированные рисом и сыром, Сметана 10%, Чай некрепкий</div>
+          <div class="meal-weight">250г / 20г / 200мл</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-name">На ночь</div>
+          <div class="meal-dish">Вода минеральная щелочная (без газа)</div>
+          <div class="meal-weight">200мл</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Логика фильтрации по кнопкам дней недели
+    function filterDay(dayId) {
+      document.getElementById('menuSearch').value = "";
+      document.querySelectorAll('.meal-row').forEach(r => r.style.display = "block");
+
+      document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.nav-item')).find(btn => btn.innerText.includes(dayId) || (dayId === 'ALL' && btn.innerText.includes('Все')));
+      if (targetBtn) targetBtn.classList.add('active');
+
+      document.querySelectorAll('.day-block').forEach(block => {
+        if (dayId === 'ALL' || block.getAttribute('data-day') === dayId) {
+          block.style.setProperty('display', 'flex', 'important');
+        } else {
+          block.style.setProperty('display', 'none', 'important');
+        }
+      });
+
+      document.querySelectorAll('[data-info="true"]').forEach(card => {
+        card.style.setProperty('display', (dayId === 'ALL') ? 'flex' : 'none', 'important');
+      });
+    }
+
+    // Логика мгновенного живого поиска по блюдам
+    function liveSearch() {
+      const query = document.getElementById('menuSearch').value.toLowerCase().trim();
+      const rows = document.querySelectorAll('.meal-row');
+      const blocks = document.querySelectorAll('.day-block');
+      const infoCards = document.querySelectorAll('[data-info="true"]');
+
+      if (query === "") {
+        rows.forEach(r => r.style.display = "block");
+        infoCards.forEach(c => c.style.display = "flex");
+        filterDay('ALL');
+        return;
+      }
+
+      infoCards.forEach(c => c.style.setProperty('display', 'none', 'important'));
+      document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+
+      blocks.forEach(block => {
+        let hasMatch = false;
+        const blockRows = block.querySelectorAll('.meal-row');
+        
+        blockRows.forEach(row => {
+          if (row.innerText.toLowerCase().includes(query)) {
+            row.style.display = "block";
+            hasMatch = true;
+          } else {
+            row.style.display = "none";
+          }
+        });
+
+        if (hasMatch) {
+          block.style.setProperty('display', 'flex', 'important');
+        } else {
+          block.style.setProperty('display', 'none', 'important');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
